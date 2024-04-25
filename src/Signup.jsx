@@ -3,7 +3,6 @@ import { useState } from 'react';
 const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [errors, setErrors] = useState({});
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -45,7 +44,6 @@ const Signup = () => {
             className="inputBox"
           />
         </label>
-        {errors.email && <p>{errors.email}</p>}
 
         <label className="labelBox">
           Password
@@ -56,7 +54,6 @@ const Signup = () => {
             className="inputBox"
           />
         </label>
-        {errors.password && <p>{errors.password}</p>}
       </div>
 
       <button className="buttonBox">Sign up</button>
