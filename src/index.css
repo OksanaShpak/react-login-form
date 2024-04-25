@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Nunito Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 49.1px;
+  color: #525252;
+}
+
+/* Styles for label */
+.labelBox {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 19.1px;
+  color: #828282;
+  display: flex;
+  flex-direction: column;
+}
+
+.labelBox:first-of-type {
+  margin-bottom: 30px;
+}
+
+/* Styles for input */
+.inputBox {
+  color: #828282;
+  border: 1px solid #DED2D9;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 5px;
+  max-width: 420px;
+  width: 100%;
+  height: 45px;
+
+}
+
+.inputBox::placeholder {
+  font-weight: 400;
+  color: #E0E0E0;
+}
+
+/* Styles for button */
+.buttonBox {
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 24.55px;
+  color: #FFFFFF;
+  max-width: 420px;
+  width: 100%;
+  height: 50px;
+  border-radius: 6px;
+  padding: 13px 10px;
+  background-color: #7F265B;
+  margin-top: 50px;
+  border: none;
+  text-align: center;
+}
+
+.login__inputs {
+  display: flex;
+  flex-direction: column;
+}
+
+.login__text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24.55px;
+  color: #828282;
+}
+
+.login__link {
+  font-weight: 600;
+  color: #7F265B;
+}
+
+li span:first-of-type{
+  margin-right: 20px;
+}
