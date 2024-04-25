@@ -67,6 +67,11 @@ h2 {
   text-align: center;
 }
 
+form {
+  margin: 0 auto;
+  padding: 50px;
+}
+
 .login__inputs {
   display: flex;
   flex-direction: column;
@@ -84,6 +89,6 @@ h2 {
   color: #7F265B;
 }
 
-li span:first-of-type{
+li span:first-of-type {
   margin-right: 20px;
 }

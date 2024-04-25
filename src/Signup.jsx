@@ -1,13 +1,15 @@
 import { useState } from 'react';
+import validation from './validation';
 
 const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [errors, setErrors] = useState({});
+  const [errors, setPasswordError] = useState({});
+  const [emailError, setEmailError] = useState('');
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    
+
     const data = {
       email,
       password
@@ -32,6 +34,32 @@ const Signup = () => {
     }
   };
 
+  const validation = () => {
+
+    setEmailError('')
+    setPasswordError('')
+
+    if ('' === email) {
+      setEmailError('Please enter your email')
+      return
+    }
+
+    if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
+      setEmailError('Please enter a valid email')
+      return
+    }
+
+    if ('' === password) {
+      setPasswordError('Please enter a password')
+      return
+    }
+
+    if (password.length < 7) {
+      setPasswordError('The password must be 8 characters or longer')
+      return
+    }
+  }
+
   return (
     <form onSubmit={onSubmit}>
       <h2>Create an Account</h2>
@@ -45,7 +73,6 @@ const Signup = () => {
             className="inputBox"
           />
         </label>
-        {errors.email && <p>{errors.email}</p>}
 
         <label className="labelBox">
           Password
@@ -56,10 +83,10 @@ const Signup = () => {
             className="inputBox"
           />
         </label>
-        {errors.password && <p>{errors.password}</p>}
+        {errors.map(p)}
       </div>
 
-      <button className="buttonBox">Sign up</button>
+      <button className="buttonBox" onClick={validation}>Sign up</button>
 
       <a className="login__link" href="/users">Users</a>
 
